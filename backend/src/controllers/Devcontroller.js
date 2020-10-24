@@ -1,6 +1,11 @@
 const axios = require('axios');
 const Dev = require('../model/Dev')
 module.exports = {
+    async index(req, res) {
+        const users = await Dev.find()
+        return res.json({users});
+    },
+
     async store(req, res) {
         const { username } = req.body;
 

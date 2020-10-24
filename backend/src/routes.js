@@ -3,9 +3,7 @@ const DevController = require('./controllers/Devcontroller');
 
 const routes = express.Router();
 
-routes.get('/', (req, res) => {
-    return res.json({message: "Hello World :D"});
-});
+routes.get('/devs', DevController.index);
 
 routes.post('/devs', DevController.store);
 

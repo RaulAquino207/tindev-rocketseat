@@ -1,10 +1,11 @@
 const port = 8080;
 const express = require('express');
+const routes = require('./routes');
 
 const server = express();
 
-server.get('/', (req, res) => {
-    return res.json('Hello World');
-});
+server.use(routes);
 
-server.listen(port);
+server.listen(port, () => {
+    console.log(`server start on port ${port}`);
+});

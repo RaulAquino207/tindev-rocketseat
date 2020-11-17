@@ -9,10 +9,10 @@ module.exports = {
     async store(req, res) {
         const { username } = req.body;
 
-        const userExist = await Dev.findOne({user: username});
+        const userExists = await Dev.findOne({user: username});
 
-        if(userExist){
-            return res.json(userExist);
+        if(userExists){
+            return res.json(userExists);
         }
         const response = await axios.get(`https://api.github.com/users/${username}`);
 

@@ -1,28 +1,25 @@
-const Dev = require('../model/Dev');
+const Dev = require('../models/Dev');
 
 module.exports = {
-    async store(req, res){
+    async store(req,res){
         const { user } = req.headers;
         const { devId } = req.params;
-        
-        console.log(user);
-        console.log(devId);
-        
+        console.log("🚀 ~ file: LikeController.js ~ line 6 ~ store ~ user", user);
+        console.log("🚀 ~ file: LikeController.js ~ line 7 ~ store ~ devId", devId);
+
         const loggedDev = await Dev.findById(user);
         const targetDev = await Dev.findById(devId);
 
         if(!targetDev){
-            res.status(400).json({ error: 'Dev not exist' });
+            return res.status(400).json({ error: 'Dev not' });
         }
 
         if(targetDev.likes.includes(loggedDev._id)){
-            console.log('MATCH');
+            console.log("🚀 ~ MATCH");
         }
 
         loggedDev.likes.push(targetDev._id);
-
         await loggedDev.save();
-        
         res.json(loggedDev);
     }
-};
+}

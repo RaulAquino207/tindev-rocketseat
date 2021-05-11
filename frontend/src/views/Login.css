@@ -7,7 +7,7 @@
 
 .login-container form {
     height: 100%;
-    max-width: 400px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +19,7 @@
     border: 1px solid #dddddd;
     border-radius: 4px;
     height: 48px;
-    padding: 0 60px;
+    padding: 0 40px;
     font-size: 16px;
     color: #666;
 }

@@ -9,7 +9,7 @@ import React from 'react';
 function Routes() {
   return (<BrowserRouter>
     <Route path="/" exact component={Login} />
-    <Route path="/main" component={Main} />
+    <Route path="/dev/:id" component={Main} />
   </BrowserRouter>);
 }
 
